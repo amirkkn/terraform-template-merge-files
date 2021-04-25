@@ -33,3 +33,17 @@ server {
 
 After terraform apply the above code block executed 2 times and redirected the contents to one single stream.conf file. The generated file is stored on your local machine under rendered_template/ directory
 
+Result:
+``` 
+server {
+   listen 8888;
+   proxy_pass        myfirst-server.com:1522;
+   proxy_connect_timeout 100s;
+}
+
+server {
+   listen 5555;
+   proxy_pass        mysecond-server.com:5432;
+   proxy_connect_timeout 100s;
+}
+```
