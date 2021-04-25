@@ -27,22 +27,3 @@ EOF
     local_file.saved-manifesto
   ]
 }
-
-# resource "null_resource" "concatenate_my_files" {
-#   triggers = {
-#      always_run = timestamp()
-#   }
-#   provisioner "local-exec" {
-#     working_dir = "./rendered_temp"
-#     command = <<EOF
-# now=$(date +"%Y-%m-%d-%H-%M-%S")
-# truncate -s 0 $(ls -1 | grep -E "^stream.*.conf$")
-# awk 'FNR==1{print ""}1' * > stream_$now.conf
-# aws s3 cp stream_$now.conf s3://${var.s3_bucket}/stream.conf
-# ls | grep -v stream_$now.conf | xargs rm -rf
-# EOF
-#   }
-#     depends_on = [
-#     local_file.saved-manifesto
-#   ]
-# }
