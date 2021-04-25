@@ -1,7 +1,8 @@
 # terraform-template-merge-files
 
 If you want to generate a configuration file which includes repeated block config like Nginx or ansible inventory file, this approach can help you create a single config file using terraform template.
-This mini project describes how you create Nginx stream configuration using template and redirect rendered files in to a single file using null_resource.
+
+This mini project describes how you create Nginx stream configuration file using template. Depends on length of array, multiple rendered files are generated and using provisioner **local-exec**, they are redirected to a single file.
 
 # How it works
 you create the custom config values in your variables.tf
