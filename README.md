@@ -31,5 +31,5 @@ server {
 }
 ``` 
 
-After terraform apply the above code block executed 2 times and redirected the contents to one single stream_<timestamp>.conf file. The generated file is stored on your local machine under rendered_template/ directory
+After terraform apply the above code block executed 2 times and redirected the contents to one single stream.conf file. The generated file is stored on your local machine under rendered_template/ directory
 
